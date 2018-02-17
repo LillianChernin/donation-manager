@@ -6,12 +6,11 @@
 
 ## Motivation
 
-"Humanitarian workers call the crush of useless, often incomprehensible contributions "the second disaster."" - (https://www.cbsnews.com/news/best-intentions-when-disaster-relief-brings-anything-but-relief/)
+"Humanitarian workers call the crush of useless, often incomprehensible contributions "the second disaster.""(https://www.cbsnews.com/news/best-intentions-when-disaster-relief-brings-anything-but-relief/)
 
 ""People still have that opportunity to choose what it is they're purchasing, so they're not just giving money to an amorphous, unidentifiable pool," says Feder."
 
-"Part of what people are doing is they're helping, they're trying to help. What we need to figure out is how to effectively handle that," O'Hara says.
-- (https://www.npr.org/2013/01/09/168946170/thanks-but-no-thanks-when-post-disaster-donations-overwhelm)
+"Part of what people are doing is they're helping, they're trying to help. What we need to figure out is how to effectively handle that," O'Hara says.(https://www.npr.org/2013/01/09/168946170/thanks-but-no-thanks-when-post-disaster-donations-overwhelm)
 
 ## Link to Project Trello:
 

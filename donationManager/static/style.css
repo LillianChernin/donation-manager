@@ -2,7 +2,13 @@ h1 {
   color: red;
 }
 
-.container-fluid {
+header .container-fluid {
+  background-color: #04ffcd;
+  display: flex;
+  flex-direction: column;
+}
+
+footer .container-fluid {
   background-color: #ff041d;
 }
 

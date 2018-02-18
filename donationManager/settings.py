@@ -131,7 +131,7 @@ STATICFILES_DIRS = [
 
 # Custom Django auth settings
 
-AUTH_USER_MODEL = 'main_app.User'
+# AUTH_USER_MODEL = 'main_app.User'
 
 
 

@@ -29,11 +29,10 @@ class ReliefEffort(models.Model):
 class Need(models.Model):
     name = models.CharField(max_length=100)
     desc = models.CharField(max_length=150)
-    relief_effor_id = models.ForeignKey(ReliefEffort,
+    relief_effort_id = models.ForeignKey(ReliefEffort,
     on_delete=models.CASCADE)
     def __str__(self):
         return self.name
-
 
 class Donation(models.Model):
     need_id = models.ForeignKey(Need,

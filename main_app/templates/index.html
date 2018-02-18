@@ -2,7 +2,11 @@
 {% load staticfiles %}
 
 {% block content %}
-  <p>this is the index page</p>
+  {% for relief_effort in relief_efforts %}
+    <a href="/{{relief_effort.id}}">
+      <p>Name: {{ relief_effort.name }}</p>
+    </a>
+  {% endfor %}
   <form action="post_url/" method="post">
      {% csrf_token %}
      {{ form.as_p }}

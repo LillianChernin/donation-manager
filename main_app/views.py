@@ -1,14 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import ReliefEffortForm
+from .models import ReliefEffort
 
 # Create your views here.
 
 def index(request):
+    relief_efforts = ReliefEffort.objects.all()
     form = ReliefEffortForm()
-    return render(request, 'index.html', {'form': form})
+    return render(request, 'index.html', {'relief_efforts': relief_efforts, 'form': form})
 
-    
+def show(request, relief_effort_id):
+    relief_effort = ReliefEffort.objects.get(id=relief_effort_id)
+    return render(request, 'specific-relief.html', {'relief_effort':relief_effort})
+
 def post_relief_effort(request):
     form = ReliefEffortForm(request.POST)
     if form.is_valid():

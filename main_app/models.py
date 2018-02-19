@@ -35,15 +35,15 @@ class ReliefEffort(models.Model):
     def __str__(self):
 	    return self.name
 
-# class ItemRequest(models.Model):
-#     name = models.CharField(max_length=40)
-#     desc = models.CharField(max_length=100)
-#     is_fulfilled = models.BooleanField(default=False)
-#     relief_effort_id = models.ForeignKey(ReliefEffort,
-#     on_delete=models.CASCADE)
-#     def __str__(self):
-#         return self.name
-#
+class ItemRequest(models.Model):
+    name = models.CharField(max_length=40)
+    desc = models.CharField(max_length=100)
+    is_fulfilled = models.BooleanField(default=False)
+    relief_effort_id = models.ForeignKey(ReliefEffort,
+    on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name
+
 # class Donation(models.Model):
 #     item_request_id = models.ForeignKey(ItemRequest,
 #     models.SET_NULL,

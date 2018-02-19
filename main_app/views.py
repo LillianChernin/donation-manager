@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .forms import ReliefEffortForm
+from .forms import ItemRequestForm
 from .models import ReliefEffort
+from .models import ItemRequest
+
 
 # Create your views here.
 
@@ -12,7 +15,9 @@ def index(request):
 
 def show(request, relief_effort_id):
     relief_effort = ReliefEffort.objects.get(id=relief_effort_id)
-    return render(request, 'specific-relief.html', {'relief_effort':relief_effort})
+    item_requests = ItemRequest.objects.get(relief_effort_id=relief_effort_id)
+    form = ItemRequestForm()
+    return render(request, 'specific-relief.html', {'relief_effort':relief_effort, 'form': form, 'item_requests': item_requests})
 
 def post_relief_effort(request):
     form = ReliefEffortForm(request.POST)
@@ -24,3 +29,16 @@ def post_relief_effort(request):
         )
         relief_effort.save()
     return HttpResponseRedirect('/')
+
+def post_item_request(request, relief_effort_id):
+    form = ItemRequestForm(request.POST)
+    relief_effort = ReliefEffort.objects.get(id=relief_effort_id)
+    if form.is_valid():
+        item_request = ItemRequest(
+            name=form.cleaned_data['name'],
+            desc=form.cleaned_data['desc']
+        )
+        item_request.relief_effort_id = relief_effort
+        item_request.save()
+        path = '/' + str(relief_effort_id) + '/'
+    return HttpResponseRedirect(path)

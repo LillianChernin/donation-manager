@@ -15,9 +15,11 @@ def index(request):
 
 def show(request, relief_effort_id):
     relief_effort = ReliefEffort.objects.get(id=relief_effort_id)
-    item_requests = ItemRequest.objects.get(relief_effort_id=relief_effort_id)
+    ir = ItemRequest.objects.filter(relief_effort_id=relief_effort)
     form = ItemRequestForm()
-    return render(request, 'specific-relief.html', {'relief_effort':relief_effort, 'form': form, 'item_requests': item_requests})
+    return render(request, 'specific-relief.html', {'relief_effort':relief_effort, 'form': form, 'ir':ir})
+
+
 
 def post_relief_effort(request):
     form = ReliefEffortForm(request.POST)
